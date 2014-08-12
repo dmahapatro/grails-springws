@@ -1,9 +1,20 @@
 **Spring WS Grails Plugin**
 
-**Dependency:**  
-`compile ':springws:2.0.0'`
+Spring WS plugin without security.
+With the upgrade of the plugin to Grails 2.4.2 came across the problem of clash between older version of spring security core with that of the latest got from Spring Security Core plugin 2.0-RC4.
+This version is created by removing all security related classes and beans so that it won't give a compile error when used in an app in NetJets.
 
-**Feature for v2.0.0**  
+**Dependency:**  
+`compile ':springws:2.1.0'`
+
+**Feature for v2.1.0**
+This is an update to the older version of plugin (v 2.0.0) with the below basic feature updates:
+
+ - No Security features
+ - No dependency to spring-security-core
+ - Removed all security related classes to avoid compilation issues
+
+**Feature for v2.0.0**
 This is an update to the older version of plugin (v 1.0.0) with the below basic feature updates:
 
  - Updated to Grails 2.4.2

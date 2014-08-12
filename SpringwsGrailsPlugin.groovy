@@ -22,9 +22,9 @@ import org.apache.commons.logging.LogFactory
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import org.codehaus.groovy.grails.plugins.spring.ws.*
-import org.codehaus.groovy.grails.plugins.spring.ws.security.WebServiceInvocationDefinitionSource
+/*import org.codehaus.groovy.grails.plugins.spring.ws.security.WebServiceInvocationDefinitionSource
 import org.codehaus.groovy.grails.plugins.spring.ws.security.WsSecurityConfigArtefactHandler
-import org.codehaus.groovy.grails.plugins.spring.ws.security.WsSecurityConfigFactory
+import org.codehaus.groovy.grails.plugins.spring.ws.security.WsSecurityConfigFactory*/
 import org.springframework.beans.factory.config.MethodInvokingFactoryBean
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition
 import org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection
@@ -38,7 +38,7 @@ import org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection
  * @author Tareq Abedrabbo (tareq.abedrabbo@gmail.com)
  */
 class SpringwsGrailsPlugin {
-    def version = "2.0.0"
+    def version = "2.1.0"
     def grailsVersion = "2.0 > *"
     //def dependsOn = [functionalTest:'1.2.5 > *']
     def pluginExcludes = [
@@ -58,7 +58,7 @@ class SpringwsGrailsPlugin {
     def issueManagement = [system: "JIRA", url: "http://jira.grails.org/browse/GPSPRINGWS"]
     def scm = [url: "https://github.com/gpc/grails-springws"]
     def developers = [[name: "Dhiraj Mahapatro", email: "dmahapatro@netjets.com"]]
-    def artefacts = [EndpointArtefactHandler, InterceptorsConfigArtefactHandler, WsSecurityConfigArtefactHandler]
+    def artefacts = [EndpointArtefactHandler, InterceptorsConfigArtefactHandler]
     def watchedResources = ["file:./grails-app/endpoints/**/*",
             "file:./grails-app/conf/*WsSecurityConfig.groovy"]
     def loadAfter = ['acegi']
@@ -118,21 +118,21 @@ class SpringwsGrailsPlugin {
         }
 
         // Add ws-security for each of the applicable classes
-        for (wsSecurityConfigClass in application.wsSecurityConfigClasses) {
+        /*for (wsSecurityConfigClass in application.wsSecurityConfigClasses) {
             log.debug "found WS-Security configuration class: ${wsSecurityConfigClass.fullName}"
             def callable = SECURITY_CONFIG_BEANS.curry(wsSecurityConfigClass)
             callable.delegate = delegate
             callable.call()
-        }
+        }*/
 
         // Configure the applicable key stores
         def keyStores = application.config.springws?.security?.keyStore
         log.debug "key stores: ${keyStores.entrySet().inspect()}"
-        for (keyStore in keyStores) {
+        /*for (keyStore in keyStores) {
             def bean = WsSecurityConfigFactory.createKeyStoreBean(keyStore)
             bean.delegate = delegate
             bean.call()
-        }
+        }*/
 
         // if Spring Security is installed, add access decision beans
         def foundAcegi = Holders.getPluginManager()?.hasGrailsPlugin('acegi')
@@ -274,7 +274,7 @@ class SpringwsGrailsPlugin {
         log.debug("Reloading security config")
         def foundDefaultWsSecurityConfig = applicationContext."$DEFAULT_WS_SECURITY_CONFIG_NAME" && application.isArtefactOfType(DEFAULT_WS_SECURITY_CONFIG_NAME, 'WsSecurityConfig')
         log.debug "Found default WS-Security config: $foundDefaultWsSecurityConfig"
-        for (wsSecurityConfigClass in application.wsSecurityConfigClasses) {
+        /*for (wsSecurityConfigClass in application.wsSecurityConfigClasses) {
             log.debug "Processing ${wsSecurityConfigClass.dump()}"
             def config = applicationContext."${wsSecurityConfigClass.fullName}"
             log.debug "Creating WS-Security interceptor for ${config.class.name}. Default: ${config.class.name == DEFAULT_WS_SECURITY_CONFIG_NAME}"
@@ -328,7 +328,7 @@ class SpringwsGrailsPlugin {
                 }
                 interceptors.add(order, interceptorAdapter)
             }
-        }
+        }*/
 
         if (log.debugEnabled) log.debug("resulting interceptors: ${interceptors}")
         applicationContext.getBean('payloadRootQNameEndpointMapping').interceptors = interceptors

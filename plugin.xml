@@ -1,4 +1,4 @@
-<plugin name='springws' version='2.0.0' grailsVersion='2.0 &gt; *'>
+<plugin name='springws' version='2.1.0' grailsVersion='2.0 &gt; *'>
   <author>Russ Miles</author>
   <authorEmail>russ@russmiles.com</authorEmail>
   <title>Spring WS Plugin</title>

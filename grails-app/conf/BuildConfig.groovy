@@ -20,13 +20,9 @@ grails.project.dependency.resolution = {
         compile ('org.springframework.ws:spring-ws-security:2.2.0.RELEASE'){
             excludes "xws-security", "wsit-rt", "spring-security-core"
         }
-        compile ('org.springframework.security:spring-security-core:2.0.8.RELEASE') {
-            //transitive = false
-        }
-
         compile 'org.apache.ws.security:wss4j:1.6.10'
         test 'org.springframework:spring-expression:4.0.5.RELEASE'
-        test 'wsdl4j:wsdl4j:1.6.2'
+        compile 'wsdl4j:wsdl4j:1.6.2'
     }
 
     plugins {
