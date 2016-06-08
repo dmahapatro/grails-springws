@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:error="http://netjets.com/common/error"
+           targetNamespace="http://netjets.com/common/error"
+           elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+   <xs:element name="ErrorList" type="error:ErrorListType" />
+   <xs:complexType name="ErrorListType">
+		<xs:sequence>
+			<xs:element name="Error" type="error:ErrorType" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="StackTrace" type="xs:string"  minOccurs="0"/>
+		</xs:sequence>
+    </xs:complexType>
+    <xs:element name="Error" type="error:ErrorType"/>
+	<xs:complexType name="ErrorType">
+		<xs:sequence>
+			<xs:element name="Application" type="xs:string"/>
+			<xs:element name="Code" type="xs:int"/>
+			<xs:element name="Description" type="xs:string"/>
+			<xs:element name="ServerTime" type="xs:dateTime"/>
+			<xs:element name="ServerName" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

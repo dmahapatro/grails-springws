@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:entity="http://netjets.com/common/entity"
+    xmlns:at="http://netjets.com/airport"
+    targetNamespace="http://netjets.com/airport" version="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:import namespace="http://netjets.com/common/entity" schemaLocation="../../shared-xsds/common/entity/Entity-1.xsd"/>
+   
+    <xs:complexType name="AirportType">
+        <xs:complexContent>
+            <xs:extension base="entity:EntityType">
+                <xs:sequence>
+                   <xs:element name="ICAOCode" type="xs:string"/>
+                   <xs:element name="Name" type="xs:string"/>
+                   <xs:element name="City" type="xs:string"/>
+                   <xs:element name="State" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+	</xs:complexType>
+
+    <xs:element name="Airport" type="at:AirportType"/>
+    <xs:element name="Airports" type="at:ArrayOfAirportsType"/>
+    <xs:complexType name="ArrayOfAirportsType">
+     <xs:sequence>
+      <xs:element name="Airport" type="at:AirportType" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
