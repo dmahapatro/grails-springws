@@ -59,13 +59,16 @@ public class ReloadablePayloadRootQNameEndpointMapping extends AbstractEndpointM
     private Map temporaryEndpointMap = new HashMap();
 
     /**
+     * <p>
      * Set whether to lazily initialize endpoints. Only applicable to singleton endpoints, as prototypes are always
      * lazily initialized. Default is <code>false</code>, as eager initialization allows for more efficiency through
      * referencing the controller objects directly.
-     * <p/>
+     * </p>
      * If you want to allow your endpoints to be lazily initialized, make them "lazy-init" and set this flag to
      * <code>true</code>. Just making them "lazy-init" will not work, as they are initialized through the references
      * from the endpoint mapping in this case.
+     *
+     * @param lazyInitEndpoints Lazy Init Endpoints
      */
     public void setLazyInitEndpoints(boolean lazyInitEndpoints) {
         this.lazyInitEndpoints = lazyInitEndpoints;
@@ -74,6 +77,8 @@ public class ReloadablePayloadRootQNameEndpointMapping extends AbstractEndpointM
     /**
      * Set whether to register bean names found in the application context. Setting this to <code>true</code> will
      * register all beans found in the application context under their name. Default is <code>false</code>.
+     *
+     * @param registerBeanNames All bean names
      */
     public final void setRegisterBeanNames(boolean registerBeanNames) {
         this.registerBeanNames = registerBeanNames;
@@ -83,6 +88,7 @@ public class ReloadablePayloadRootQNameEndpointMapping extends AbstractEndpointM
      * Sets a Map with keys and endpoint beans as values. The nature of the keys in the given map depends on the exact
      * subclass used. They can be qualified names, for instance, or mime headers.
      *
+     * @param endpointMap Map of all SOAP Endpoints
      * @throws IllegalArgumentException if the endpoint is invalid
      */
     public final void setEndpointMap(Map endpointMap) {
@@ -92,6 +98,8 @@ public class ReloadablePayloadRootQNameEndpointMapping extends AbstractEndpointM
     /**
      * Maps keys to endpoint bean names. The nature of the property names depends on the exact subclass used. They can
      * be qualified names, for instance, or mime headers.
+     *
+     * @param mappings Properties
      */
     public void setMappings(Properties mappings) {
         temporaryEndpointMap.putAll(mappings);
@@ -114,6 +122,7 @@ public class ReloadablePayloadRootQNameEndpointMapping extends AbstractEndpointM
      * Lookup an endpoint for the given message. The extraction of the endpoint key is delegated to the concrete
      * subclass.
      *
+     * @param messageContext MessageContext
      * @return the looked up endpoint, or <code>null</code>
      */
     protected final Object getEndpointInternal(MessageContext messageContext) throws Exception {

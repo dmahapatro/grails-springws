@@ -28,6 +28,7 @@ import java.util.List;
  */
 public interface GrailsInterceptorsClass extends GrailsClass {
     /**
+     * @param interceptorInstance Instance of the interceptor
      * @return A list of InterceptorConfig instances
      */
     List getConfigs(Object interceptorInstance);
