@@ -6,12 +6,22 @@ Grails 3
 ---
 
 **build.gradle Dependency:**  
-`compile 'org.grails.plugins:springws:3.0.0'`
+
+```groovy  
+repositories {
+    ...
+    maven { url  "http://dl.bintray.com/dmahapatro/plugins" }
+}
+
+dependencies {
+    ...
+    compile 'org.grails.plugins:springws:3.0.0'
+}
+```
 
 Plugin upgraded to Grails 3.1.8 with no security features. It uses `spring-boot-starter-ws` and partially follows the steps to [Produce a SOAP service in Spring Boot app](https://spring.io/guides/gs/producing-web-service/). Use of JAXB, `@Endpoint`, `@PayloadRoot`, `@RequestPayload` and `@ResponsePayload` is avoided in order to stick to legacy plugin architecture. 
 
-> Legacy Grails 2 applications using this plugin and have a wide range of SOAP services will be stuck in Grails 2 unless services are > moved to REST or a better version of SOAP Producer options. Making this plugin upgrade to Grails 3 will ease the transformation to 
-> Grails 3 apps without changing any of the plugin configuation or loginc inside the Endpoints and Interceptors.
+> Legacy Grails 2 applications using this plugin and have a wide range of SOAP services will be stuck in Grails 2 unless services are moved to REST or a better version of SOAP Producer options. Making this plugin upgrade to Grails 3 will ease the transformation to Grails 3 apps without changing any of the plugin configuation or loginc inside the Endpoints and Interceptors.
 
 Grails 2
 ---
