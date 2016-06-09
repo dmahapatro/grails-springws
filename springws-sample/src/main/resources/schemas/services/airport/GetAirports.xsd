@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:at="http://netjets.com/airport"
-           xmlns:error="http://netjets.com/common/error"
-           targetNamespace="http://netjets.com/airport/airportService"
+           xmlns:at="http://mycompany.com/airport"
+           xmlns:error="http://mycompany.com/common/error"
+           targetNamespace="http://mycompany.com/airport/airportService"
            elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 
-    <xs:import namespace="http://netjets.com/airport" schemaLocation="../../shared-xsds/airport/Airport-1.xsd"/>
-    <xs:import namespace="http://netjets.com/common/error" schemaLocation="../../shared-xsds/common/error/Error-1.xsd"/>
+    <xs:import namespace="http://mycompany.com/airport" schemaLocation="../../shared-xsds/airport/Airport-1.xsd"/>
+    <xs:import namespace="http://mycompany.com/common/error" schemaLocation="../../shared-xsds/common/error/Error-1.xsd"/>
 
     <xs:element name="GetAirportsRequest">
         <xs:complexType>
@@ -17,9 +17,7 @@
     </xs:element>
     <xs:element name="GetAirportsResponse">
         <xs:annotation>
-            <xs:documentation>Returns a list of valid NetJets airports and all NetJets aircraft types that are
-                unsuitable for that airport
-            </xs:documentation>
+            <xs:documentation>Returns a list of valid airports</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:choice>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:entity="http://netjets.com/common/entity"
-    xmlns:at="http://netjets.com/airport"
-    targetNamespace="http://netjets.com/airport" version="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
-    <xs:import namespace="http://netjets.com/common/entity" schemaLocation="../../shared-xsds/common/entity/Entity-1.xsd"/>
+    xmlns:entity="http://mycompany.com/common/entity"
+    xmlns:at="http://mycompany.com/airport"
+    targetNamespace="http://mycompany.com/airport" version="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:import namespace="http://mycompany.com/common/entity" schemaLocation="../../shared-xsds/common/entity/Entity-1.xsd"/>
    
     <xs:complexType name="AirportType">
         <xs:complexContent>

@@ -14,26 +14,21 @@
  * limitations under the License.
  */
 
-package org.grails.plugin.springws;
+package org.grails.plugins.springws;
 
 import grails.core.ArtefactHandlerAdapter;
 
 /**
- * Grails artefact handler for Endpoint classes.
+ * Grails artefact handler for Interceptors classes.
  *
- * @author Russ Miles (russ@russmiles.com)
+ * @author Ivo Houbrechts (ivo@houbrechts-it.be)
+ *
  */
-public class EndpointArtefactHandler extends ArtefactHandlerAdapter {
+public class InterceptorsConfigArtefactHandler extends ArtefactHandlerAdapter {
 
-	public static final String TYPE = "Endpoint";
+    public static final String TYPE = "Interceptors";
 
-    public EndpointArtefactHandler() {
-        super(TYPE, GrailsEndpointClass.class, DefaultGrailsEndpointClass.class, TYPE);
-    }
-
-    public boolean isArtefactClass(Class clazz) {
-        // class shouldn't be null and should ends with Endpoint suffix
-        return (clazz != null && clazz.getName().endsWith(TYPE));
+    public InterceptorsConfigArtefactHandler() {
+        super(TYPE, GrailsInterceptorsClass.class, DefaultGrailsInterceptorsClass.class, TYPE);
     }
 }
-

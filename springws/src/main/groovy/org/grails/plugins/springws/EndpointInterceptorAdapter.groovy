@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.grails.plugin.springws
+package org.grails.plugins.springws
 
 import java.util.regex.Pattern
 import org.apache.commons.logging.LogFactory

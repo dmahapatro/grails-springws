@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.grails.plugin.springws
+package org.grails.plugins.springws
 
 /**
  * Class that converts the closures of an endpoint interceptors class into  {@link InterceptorConfig}  instances

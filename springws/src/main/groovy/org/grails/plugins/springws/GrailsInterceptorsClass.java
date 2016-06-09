@@ -13,18 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugin.springws;
+
+package org.grails.plugins.springws;
 
 import grails.core.GrailsClass;
+import java.util.List;
 
 /**
- * Interface for Spring Web Services endpoint artefacts.
+ *  Interface for Spring Web Services endpoint interceptor artefacts.
  *
  * @author Russ Miles (russ@russmiles.com)
  * @author Ivo Houbrechts (ivo@houbrechts-it.be)
  *
  */
-
-public interface GrailsEndpointClass extends GrailsClass {
-
+public interface GrailsInterceptorsClass extends GrailsClass {
+    /**
+     * @return A list of InterceptorConfig instances
+     */
+    List getConfigs(Object interceptorInstance);
 }

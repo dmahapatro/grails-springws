@@ -12,7 +12,7 @@ buildscript {
 }
 
 version "3.0.0"
-group "org.grails.plugin"
+group "org.grails.plugins"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
@@ -55,16 +55,15 @@ task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
 }
 grailsPublish {
-    // TODO: Provide values here
-    user = 'user'
-    key = 'key'
-    githubSlug = 'foo/bar'
+    user = "$BINTRAY_USER"
+    key = "$BINTRAY_KEY"
+    githubSlug = 'grails-springws/tree/grails3'
     license {
         name = 'Apache-2.0'
     }
-    title = "My Plugin"
-    desc = "Full plugin description"
-    developers = [johndoe:"John Doe"]
+    title = "springws"
+    desc = "Spring WS Plugin for Grails 3"
+    developers = [dmahapatro: "Dhiraj Mahapatro"]
     portalUser = ""
     portalPassword = ""    
 }

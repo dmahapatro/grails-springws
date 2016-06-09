@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import org.grails.plugin.springws.codec.AbstractXMLDateCodec
+import org.grails.plugins.springws.codec.AbstractXMLDateCodec
 
 
 /**

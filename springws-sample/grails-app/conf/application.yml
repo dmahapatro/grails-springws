@@ -50,7 +50,7 @@ environments:
 grails:
     profile: web
     codegen:
-        defaultPackage: springws.sample
+        defaultPackage: org.grails.plugins.springws.sample
     spring:
         transactionManagement:
             proxies: false
@@ -132,6 +132,6 @@ springws:
             xsds: "/schemas/services/airport/GetAirports.xsd"
             portTypeName: AirportPort
             serviceName: AirportService
-            targetNamespace: "http://netjets.com/airport/airportService"
+            targetNamespace: "http://mycompany.com/airport/airportService"
             export: true
             inline: true

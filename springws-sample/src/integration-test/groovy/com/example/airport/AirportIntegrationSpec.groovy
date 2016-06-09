@@ -5,14 +5,14 @@ import grails.transaction.*
 import groovy.xml.MarkupBuilder
 import org.custommonkey.xmlunit.Diff
 import spock.lang.*
-import org.grails.plugin.springws.client.WebServiceTemplate
+import org.grails.plugins.springws.client.WebServiceTemplate
 
 @Integration
 @Rollback
 class AirportIntegrationSpec extends Specification {
     def webServiceTemplate
     private final static String SERVICE_URL = "http://localhost:8080/airport-service-web/services"
-    private static String NAMESPACE = "http://netjets.com/airport/airportService"
+    private static String NAMESPACE = "http://mycompany.com/airport/airportService"
 
     def setup() {
         webServiceTemplate = new WebServiceTemplate()
@@ -36,8 +36,8 @@ class AirportIntegrationSpec extends Specification {
         and:
         def expected = new StringWriter()
         new MarkupBuilder(expected).
-            GetAirportsResponse(xmlns: "http://netjets.com/airport/airportService") {
-                Airports(xmlns: "http://netjets.com/airport/airport") {
+            GetAirportsResponse(xmlns: "http://mycompany.com/airport/airportService") {
+                Airports(xmlns: "http://mycompany.com/airport/airport") {
                     [
                         ['KCMH', 'Port Columbus', 'Columbus', 'Ohio'],
                         ['KDEN', 'Denver Intl', 'Denver', 'Colorado'],

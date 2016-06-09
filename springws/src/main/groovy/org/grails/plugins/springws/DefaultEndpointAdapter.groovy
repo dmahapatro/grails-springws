@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.grails.plugin.springws
+package org.grails.plugins.springws
 
 import groovy.xml.MarkupBuilder
 import javax.xml.transform.Source

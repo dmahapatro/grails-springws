@@ -2,7 +2,7 @@
 grails:
     profile: plugin
     codegen:
-        defaultPackage: springws
+        defaultPackage: org.grails.plugins.springws
     spring:
         transactionManagement:
             proxies: false

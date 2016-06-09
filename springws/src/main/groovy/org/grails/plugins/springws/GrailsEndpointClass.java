@@ -13,22 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.grails.plugins.springws;
 
-package org.grails.plugin.springws;
-
-import grails.core.ArtefactHandlerAdapter;
+import grails.core.GrailsClass;
 
 /**
- * Grails artefact handler for Interceptors classes.
+ * Interface for Spring Web Services endpoint artefacts.
  *
+ * @author Russ Miles (russ@russmiles.com)
  * @author Ivo Houbrechts (ivo@houbrechts-it.be)
  *
  */
-public class InterceptorsConfigArtefactHandler extends ArtefactHandlerAdapter {
 
-    public static final String TYPE = "Interceptors";
+public interface GrailsEndpointClass extends GrailsClass {
 
-    public InterceptorsConfigArtefactHandler() {
-        super(TYPE, GrailsInterceptorsClass.class, DefaultGrailsInterceptorsClass.class, TYPE);
-    }
 }

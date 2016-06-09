@@ -1,7 +1,7 @@
 package com.example.airport
 
 class GetAirportsEndpoint {
-    def static namespace = "http://netjets.com/airport/airportService"
+    def static namespace = "http://mycompany.com/airport/airportService"
 
     def invoke(request, response) {
         try {
@@ -16,7 +16,7 @@ class GetAirportsEndpoint {
 
     private setGetAirportsResponseValues(response, airportList) {
         response.GetAirportsResponse(xmlns: namespace) {
-            Airports(xmlns: "http://netjets.com/airport/airport") {
+            Airports(xmlns: "http://mycompany.com/airport/airport") {
                 airportList.each { airport ->
                     Airport {
                         ICAOCode(airport.icao)

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-package org.grails.plugin.springws;
+package org.grails.plugins.springws;
 
-import org.grails.core.AbstractInjectableGrailsClass;
-import java.util.List;
+import grails.core.ArtefactHandlerAdapter;
 
 /**
- *  * Default class for Spring Web Services endpoint interceptor artefacts.
+ * Grails artefact handler for Endpoint classes.
  *
  * @author Russ Miles (russ@russmiles.com)
- * @author Ivo Houbrechts (ivo@houbrechts-it.be)
- *
  */
-public class DefaultGrailsInterceptorsClass extends AbstractInjectableGrailsClass implements GrailsInterceptorsClass {
-    static final String INTERCEPTORS = "Interceptors";
+public class EndpointArtefactHandler extends ArtefactHandlerAdapter {
 
-    public DefaultGrailsInterceptorsClass(Class aClass) {
-        super(aClass, INTERCEPTORS);
+	public static final String TYPE = "Endpoint";
+
+    public EndpointArtefactHandler() {
+        super(TYPE, GrailsEndpointClass.class, DefaultGrailsEndpointClass.class, TYPE);
     }
 
-    public List getConfigs(Object interceptors) {
-        return InterceptorsConfigLoader.getConfigs(interceptors);
+    public boolean isArtefactClass(Class clazz) {
+        // class shouldn't be null and should ends with Endpoint suffix
+        return (clazz != null && clazz.getName().endsWith(TYPE));
     }
 }
+

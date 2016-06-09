@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.grails.plugin.springws.codec
+package org.grails.plugins.springws.codec
 
 import javax.xml.datatype.DatatypeFactory
 

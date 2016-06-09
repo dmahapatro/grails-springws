@@ -1,4 +1,4 @@
-package org.grails.plugin.springws.client
+package org.grails.plugins.springws.client
 
 import org.springframework.xml.transform.StringResult
 import org.springframework.xml.transform.StringSource

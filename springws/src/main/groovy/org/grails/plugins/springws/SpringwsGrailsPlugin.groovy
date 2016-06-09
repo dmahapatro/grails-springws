@@ -1,4 +1,4 @@
-package org.grails.plugin.springws
+package org.grails.plugins.springws
 
 import grails.core.GrailsApplication
 import grails.plugins.*
@@ -27,7 +27,7 @@ class SpringwsGrailsPlugin extends Plugin {
     def documentation = "http://grails.org/SpringWs+Plugin"
     def license = "APACHE"
     def issueManagement = [system: "JIRA", url: "http://jira.grails.org/browse/GPSPRINGWS"]
-    def scm = [url: "https://github.com/gpc/grails-springws"]
+    def scm = [url: "https://github.com/gpc/grails-org.grails.plugins.springws"]
     def developers = [[name: "Dhiraj Mahapatro", email: "dmahapatro@netjets.com"]]
     def artefacts = [EndpointArtefactHandler, InterceptorsConfigArtefactHandler]
     def watchedResources = [

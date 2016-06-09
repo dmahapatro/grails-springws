@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-package org.grails.plugin.springws;
+package org.grails.plugins.springws;
 
-import grails.core.GrailsClass;
-import java.util.List;
+import org.grails.core.AbstractInjectableGrailsClass;
+import javax.xml.transform.TransformerConfigurationException;
 
 /**
- *  Interface for Spring Web Services endpoint interceptor artefacts.
+ * Default class for Spring Web Services endpoint artefacts.
  *
  * @author Russ Miles (russ@russmiles.com)
  * @author Ivo Houbrechts (ivo@houbrechts-it.be)
  *
  */
-public interface GrailsInterceptorsClass extends GrailsClass {
-    /**
-     * @return A list of InterceptorConfig instances
-     */
-    List getConfigs(Object interceptorInstance);
+public class DefaultGrailsEndpointClass extends AbstractInjectableGrailsClass {
+
+	public DefaultGrailsEndpointClass(Class clazz) throws TransformerConfigurationException {
+		super(clazz, "Endpoint");
+	}
 }

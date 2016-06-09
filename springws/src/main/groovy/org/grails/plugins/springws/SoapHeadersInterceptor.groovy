@@ -1,4 +1,4 @@
-package org.grails.plugin.springws
+package org.grails.plugins.springws
 
 import org.springframework.ws.server.EndpointInterceptor
 import groovy.util.slurpersupport.GPathResult

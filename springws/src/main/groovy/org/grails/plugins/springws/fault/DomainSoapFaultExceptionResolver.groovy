@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.grails.plugin.springws.fault
+package org.grails.plugins.springws.fault
 
 import org.springframework.ws.soap.server.endpoint.AbstractSoapFaultDefinitionExceptionResolver
 import org.springframework.ws.soap.server.endpoint.SoapFaultDefinition
