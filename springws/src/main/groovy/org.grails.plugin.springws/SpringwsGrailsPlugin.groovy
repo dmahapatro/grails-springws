@@ -3,17 +3,14 @@ package org.grails.plugin.springws
 import grails.core.GrailsApplication
 import grails.plugins.*
 import grails.util.GrailsClassUtils
-import grails.util.Holders
 import groovy.util.logging.Slf4j
 import org.apache.ws.commons.schema.resolver.DefaultURIResolver
 import org.springframework.beans.factory.config.MethodInvokingFactoryBean
 import org.springframework.boot.context.embedded.ServletRegistrationBean
 import org.springframework.core.io.ClassPathResource
-import org.springframework.core.io.Resource
 import org.springframework.ws.transport.http.MessageDispatcherServlet
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition
 import org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection
-import javax.xml.transform.URIResolver
 
 @Slf4j
 class SpringwsGrailsPlugin extends Plugin {
