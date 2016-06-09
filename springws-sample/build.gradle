@@ -35,6 +35,7 @@ ext {
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url  "http://dl.bintray.com/dmahapatro/plugins" }
 }
 
 dependencyManagement {
@@ -64,6 +65,7 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     testCompile 'xmlunit:xmlunit:1.6'
+    //compile 'org.grails.plugins:springws:3.0.0'
 }
 
 task wrapper(type: Wrapper) {
