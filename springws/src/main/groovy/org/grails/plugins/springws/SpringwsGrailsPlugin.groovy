@@ -44,7 +44,7 @@ class SpringwsGrailsPlugin extends Plugin {
 
     static final INTERCEPTOR_BEANS = { interceptor ->
         "${interceptor.fullName}Class"(MethodInvokingFactoryBean) {
-            targetObject = ref("grailsApplication", true)
+            targetObject = ref("grailsApplication")
             targetMethod = "getArtefact"
             arguments = [InterceptorsConfigArtefactHandler.TYPE, interceptor.fullName]
         }
