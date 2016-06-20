@@ -67,10 +67,12 @@ class SpringwsGrailsPlugin extends Plugin {
                 if (wsdlConfig) {
                     log.debug("exporting wsdl for $name")
                     "${wsdlConfig.wsdlName ?: name}"(DefaultWsdl11Definition) {
-                        schemaCollection = { CommonsXsdSchemaCollection s ->
+                        schemaCollection = new CommonsXsdSchemaCollection().with {
                             uriResolver = new DefaultURIResolver()
                             xsds = (wsdlConfig.xsds) ? wsdlConfig.xsds.split(',').collect { new ClassPathResource(it as String) } : "/WEB-INF/${name}.xsd"
                             inline = wsdlConfig.inline ?: false
+
+                            it
                         }
                         portTypeName = wsdlConfig.portTypeName ?: "${name}Port"
                         serviceName = wsdlConfig.serviceName ?: "${name}Service"
