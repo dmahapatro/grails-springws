@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     ...
-    compile 'org.grails.plugins:springws:3.0.1'
+    compile 'org.grails.plugins:springws:3.0.2'
 }
 ```
 
